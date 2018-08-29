@@ -1,0 +1,31 @@
+.imagen{
+    max-height: 50px;
+    max-width: 50px;
+}
+
+.imagen_fondo{
+    background-image: url("../img/pintura.jpg")
+}
+
+.espacio_inf{
+    margin-bottom: 64px; 
+}
+
+.espacio{
+    padding-left: 15px;
+    padding-bottom: 15px; 
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+flex: 1 0 auto;
+}
+
+.body404 {
+    background-color: #00B9E0;
+}

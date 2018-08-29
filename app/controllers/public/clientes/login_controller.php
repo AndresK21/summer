@@ -1,0 +1,150 @@
+<?php
+require_once("../../app/models/cliente.class.php");
+require_once("../../app/recaptcha/php/recaptchalib.php");
+try{
+	$ip2 = getenv('REMOTE_ADDR');
+
+	$cliente = new Cliente;
+	if($cliente->getClientes()){
+		if(isset($_POST['iniciar'])){
+			$_POST = $cliente->validateForm($_POST);
+			if($cliente->setNombre_usuario($_POST['nombre_usuario'])){
+				$_SESSION['usuario_p'] = $cliente->getNombre_usuario();
+				if($cliente->checkUsuario_cliente()){
+						if($cliente->setContrasena2($_POST['contrasena'])){
+							if($cliente->checkContrasena()){
+								if($cliente->getEstado() == 1){
+									$_SESSION['id_cliente_p'] = $cliente->getId_cliente(); //Obtiene el id_empleado para usarlo luego en la pagina template
+									$_SESSION['nombre_usuario_p'] = $cliente->getNombre_usuario(); //Obtiene el usuario para usarlo luego en la pagina template
+									$_SESSION['id_pedido_p'] = $cliente->getId_pedido();
+									$_SESSION['nombres_p'] = $cliente->getNombres();
+									$_SESSION['apellidos_p'] = $cliente->getApellidos();
+									$_SESSION['ultimoAcceso_p'] = time(); //Obtiene el tiempo de cuando se logea para posteriormente usarlo para cerrar la sesion por inactividad
+									$_SESSION['cont_p'] = 0;
+
+									if($cliente->Pedido()){
+										$_SESSION['id_pedido_p'] = $cliente->getId_pedido();
+										if($cliente->Estado()){
+											$estd = $cliente->getEstado2();
+											if($estd == 1){
+												$cliente->createPedido();
+											}else{
+												Page::showMessage(1, "Autenticación correcta", "../index/index.php");
+											}
+										}
+									}
+								}else{
+									$valor = date('Y-m-d h:i:s');
+									$valor2 = new DateTime($valor);
+									$valor3 = new DateTime($cliente->getFecha2());
+									$bloqueo = $valor3->diff($valor2);
+									if($bloqueo->d >= 1){
+										$_SESSION['id_cliente_p'] = $cliente->getId_cliente(); //Obtiene el id_empleado para usarlo luego en la pagina template
+										$_SESSION['nombre_usuario_p'] = $cliente->getNombre_usuario(); //Obtiene el usuario para usarlo luego en la pagina template
+										$_SESSION['nombres_p'] = $cliente->getNombres();
+										$_SESSION['apellidos_p'] = $cliente->getApellidos();
+										$_SESSION['ultimoAcceso_p'] = time(); //Obtiene el tiempo de cuando se logea para posteriormente usarlo para cerrar la sesion por inactividad
+										$_SESSION['cont_p'] = 0;
+
+										if($cliente->Pedido()){
+											$_SESSION['id_pedido_p'] = $cliente->getId_pedido();
+											if($cliente->Estado()){
+												$estd = $cliente->getEstado2();
+												if($estd == 1){
+													$cliente->createPedido();
+												}else{
+													Page::showMessage(1, "Autenticación correcta", "../index/index.php");
+												}
+											}
+										}
+									}else{
+										throw new Exception("Su cuenta ha sido bloqueada por exceder los intentos de inicio de sesión");
+									}
+								}
+
+							}else{
+								$_SESSION['cont_p']++;
+								Page::showMessage(2, "Clave incorrecta", "login.php");
+								if($_SESSION['cont_p'] >= 3){
+									$cliente->updateEstado($_SESSION['usuario_p']);
+									Page::showMessage(3, "Ha superado el limite de intentos de inicio de sesión", "../cuenta/login.php");
+								}
+							}
+						}else{
+							throw new Exception("Clave menor a 6 caracteres");
+						}
+				}else{
+					throw new Exception("Nombre de usuario inexistente");
+				}
+			}else{
+				throw new Exception("Nombre de usuario incorrecto");
+			}
+		}
+	}else{
+		
+	}
+
+	$cliente = new Cliente;
+	if(isset($_POST['crear'])){
+		$_POST = $cliente->validateForm($_POST);
+
+		$secret = "6Lcba2oUAAAAALRrQkft12-eHql-Wryt_WsCPJ0o";
+        $response = null;
+        // comprueba la clave secreta
+        $reCaptcha = new ReCaptcha($secret);
+       
+        if ($_POST["g-recaptcha-response"]) {
+            $response = $reCaptcha->verifyResponse(
+            $_SERVER["REMOTE_ADDR"],
+            $_POST["g-recaptcha-response"]
+            );
+         }
+        
+        if($response != null && $response->success){
+
+		if($cliente->setNombres($_POST['nombres'])){
+			if($cliente->setApellidos($_POST['apellidos'])){
+				if($cliente->setEmail($_POST['email'])){
+					if($cliente->setNombre_usuario($_POST['nombre_usuarior'])){
+						if($_POST['contrasena1'] == $_POST['contrasena2']){ //Verifica que la clave sea igual
+						if($cliente->setContrasena($_POST['contrasena1'])){
+							if($_POST['nombre_usuario'] != $_POST['contrasena1']){
+							if($cliente->createCliente()){
+								Page::showMessage(1, "Usuario creado", "../index/index.php");
+							}else{
+								throw new Exception(Database::getException());
+							}
+						}else{
+							throw new Exception("La clave no puede ser igual al nombre de usuario");
+						}
+						}else{
+							throw new Exception("Contraseña Incorrecta");
+						}
+					}else{
+						throw new Exception("Contraseña Diferentes");
+					}                    
+					}else{
+						throw new Exception("Nombre de Usuario incorrecta");
+					}
+				}else{
+					throw new Exception("Correo incorrecto");
+				}
+			}else{
+				throw new Exception("Apellidos incorrecto");
+			}
+		}else{
+			throw new Exception("Nombres incorrectos");
+		}
+	}else {
+		// Si el código no es válido, lanzamos mensaje de error al usuario
+		 throw new Exception("Porfavor llena el reCAPTCHA");
+		
+	  }
+	}
+}
+
+catch(Exception $error){
+	Page::showMessage(2, $error->getMessage(), null);
+}
+require_once("../../app/view/public/cuenta/login_view.php");
+?>
