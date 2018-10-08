@@ -24,26 +24,38 @@ require_once("../../app/models/valoraciones.class.php");
 					if($valoraciones->setId_producto($_GET['id'])){
 						$valoracion2 = $valoraciones->getValoracionesProducto2($empieza, $por_pagina);
 						$valoracion3 = $valoraciones->getEstrellasPromedio();
+
+						$existencias = $producto->getExistencias();
+						
+
 					if(isset($_POST['agregar'])){
-						$_POST = $detalle->validateForm($_POST);
-						if($detalle->setCantidad($_POST['cantidad'])){
-							if($detalle->setId_producto($_GET['id'])){
-								if($detalle->setId_pedido($_SESSION['id_pedido_p'])){
-									if($detalle->createDetalle()){
-										Page::showMessage(1, "Producto agregado al carrito", "../categorias/categorias.php");
-											
-										}else{
-											throw new Exception(Database::getException());
-										}
+
+						$cantidad_a_comprar = $_POST['cantidad'];
+
+						if($cantidad_a_comprar <= $existencias){
+							$_POST = $detalle->validateForm($_POST);
+							if($detalle->setCantidad($_POST['cantidad'])){
+								if($detalle->setId_producto($_GET['id'])){
+									if($detalle->setId_pedido($_SESSION['id_pedido_p'])){
+										if($detalle->createDetalle()){
+											Page::showMessage(1, "Producto agregado al carrito", "../categorias/categorias.php");
+												
+											}else{
+												throw new Exception(Database::getException());
+											}
+									}else{
+										throw new Exception("Pedido incorrecto");
+									}
 								}else{
-									throw new Exception("Pedido incorrecto");
+									throw new Exception("Producto incorrecto");
 								}
 							}else{
-								throw new Exception("Producto incorrecto");
+								throw new Exception("Cantidad incorrecta");
 							}
 						}else{
-							throw new Exception("Cantidad incorrecta");
+							Page::showMessage(3, "La cantidad excede las existencias", "../categorias/categorias.php");
 						}
+						
 					}
 				}else{
 					throw new Exception("Valoracion incorrecta");
