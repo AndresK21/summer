@@ -5,7 +5,7 @@
             <!-- IMAGEN 1 -->
             <img class="responsive-img" src="../../web/img/slider/slider1.jpg"> 
             <div class="caption left-align">
-            <h3 class="-text">Summer</h3>
+            <h3 class="-text">Illusion</h3>
             </div>
         </li>
         <li>

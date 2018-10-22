@@ -5,7 +5,7 @@
     <div style="text-align: justify;">
         <h5>Somos una empresa de El Salvador que se dedica al comercio detallista y mayorista de productos estampados, principalmente bolsos, estuches y carteras.</h5>
         <h5>Orgullosos de ser una empresa salvadore&ntilde;a nos honramos de contar con un numeroso personal que labora y aporta experiencia, criterio y esfuerzo a nuestra compa&ntilde;ía, a nuestros proveedores y principalmente a nuestros clientes. Todo ello sobre una base laboral de importantes prestaciones y beneficios que contribuyen a la estabilidad de la empresa y sus puestos de trabajo.</h5>
-        <h5>Relacionarse con Summer es tener la posibilidad de elegir entre un amplio portafolio de diseños. Es experimentar la importancia de formar parte de nuestro personal, proveedores y clientes.</h5>
+        <h5>Relacionarse con Illusion es tener la posibilidad de elegir entre un amplio portafolio de diseños. Es experimentar la importancia de formar parte de nuestro personal, proveedores y clientes.</h5>
     </div>
 
 </div>
