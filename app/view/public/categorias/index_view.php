@@ -5,7 +5,7 @@
             <!-- IMAGEN 1 -->
             <img class="responsive-img" src="../../web/img/slider/slider1.jpg"> 
             <div class="caption left-align">
-            <h3 class="pink-text">Pintura SV</h3>
+            <h3 class="-text">Summer</h3>
             </div>
         </li>
         <li>
@@ -17,7 +17,7 @@
         </li>
         <li>
             <!-- IMAGEN 3 -->
-            <img src="../../web/img/slider/slider3.jpg">
+            <img src="../../web/img/slider/slider3.png">
             <div class="caption center-align">
                 <h3 class="yellow-text">Calidad Garantizada</h3>
             </div>
@@ -40,7 +40,7 @@
                             <p>$productob[presentacion]</p>
                             <p>Categoria: $productob[categoria]</p>
                         <!-- BOTON DE COMPRA -->
-                        <a href='../categorias/detalle_producto.php?id=$productob[id_producto]' class='blue waves-effect waves-light btn modal-trigger'><i class='material-icons right'>shopping_cart</i>A&ntilde;adir </a>
+                        <a href='../categorias/detalle_producto.php?id=$productob[id_producto]' class='teal lighten-1 waves-effect waves-light btn modal-trigger'><i class='material-icons right'>shopping_cart</i>A&ntilde;adir </a>
     
                         <!-- ESPACIO -->
                         <div class='white-text'>.</div>

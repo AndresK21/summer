@@ -61,7 +61,7 @@ class Page extends Component{
 							<div class='navbar-fixed'>
 								<nav>
 									<!--Navbar Color Azul-->
-									<div class='nav-wrapper red'>
+									<div class='nav-wrapper teal lighten-1'>
 										<img class='brand-logo' src='../../web/img/mipintura.png'>
 										<a href='#' data-activates='mobile-demo' class='button-collapse'><i class='material-icons'>menu</i></a>
 										<ul class='right hide-on-med-and-down'>
@@ -118,7 +118,7 @@ class Page extends Component{
 							<div class='navbar-fixed'>
 								<nav>
 									<!--Navbar Color Azul-->
-									<div class='nav-wrapper red'>
+									<div class='nav-wrapper teal lighten-1'>
 										<img class='brand-logo' src='../../web/img/mipintura.png'>
 										<a href='#' data-activates='mobile-demo' class='button-collapse'><i class='material-icons'>menu</i></a>
 										<ul class='right hide-on-med-and-down'>
@@ -179,7 +179,7 @@ class Page extends Component{
 					<div class='navbar-fixed'>
 						<nav>
 							<!--Navbar Color Azul-->
-							<div class='nav-wrapper red'>
+							<div class='nav-wrapper teal lighten-1'>
 								<img class='brand-logo' src='../../web/img/mipintura.png'>
 								<a href='#' data-activates='mobile-demo' class='button-collapse'><i class='material-icons'>menu</i></a>
 								<ul class='right hide-on-med-and-down'>
@@ -212,7 +212,7 @@ class Page extends Component{
 	public static function templateFooter(){
 		print("
 				</main>
-				<footer class='page-footer red darken-2' >
+				<footer class='page-footer teal' >
 					<div class='container'>
 						<div class='row'>
 						<div class='col l6 s12'>
@@ -224,7 +224,7 @@ class Page extends Component{
 						<div class='col l4 offset-l2 s12'>
 							<h5 class='white-text'>Correo electr&oacute;nico</h5>
 							<ul>
-							<li><i class='small  material-icons'>email</i><a class='grey-text text-lighten-3 valign-wrapper'  href='https://mail.google.com/mail/u/0/#inbox?compose=new' target='_blanck'> mipintura@gmail.com</a></li>
+							<li><i class='small  material-icons'>email</i><a class='grey-text text-lighten-3 valign-wrapper'  href='https://mail.google.com/mail/u/0/#inbox?compose=new' target='_blanck'> summer@gmail.com</a></li>
 							</ul>
 						</div>
 						</div>

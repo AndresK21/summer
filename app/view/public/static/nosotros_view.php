@@ -3,9 +3,9 @@
         <h2 class="center-align">&iquest;Quienes somos&#63;</h2>
     </div>
     <div style="text-align: justify;">
-        <h5>Somos una empresa de El Salvador que se dedica al comercio detallista y mayorista de productos de pinturas.</h5>
+        <h5>Somos una empresa de El Salvador que se dedica al comercio detallista y mayorista de productos estampados, principalmente bolsos, estuches y carteras.</h5>
         <h5>Orgullosos de ser una empresa salvadore&ntilde;a nos honramos de contar con un numeroso personal que labora y aporta experiencia, criterio y esfuerzo a nuestra compa&ntilde;ía, a nuestros proveedores y principalmente a nuestros clientes. Todo ello sobre una base laboral de importantes prestaciones y beneficios que contribuyen a la estabilidad de la empresa y sus puestos de trabajo.</h5>
-        <h5>Relacionarse con Mi Pintura es tener la posibilidad de elegir entre un amplio portafolio de colores e importantes marcas nacionales e internacionales. Es experimentar la importancia de formar parte de nuestro personal, proveedores y clientes.</h5>
+        <h5>Relacionarse con Summer es tener la posibilidad de elegir entre un amplio portafolio de diseños. Es experimentar la importancia de formar parte de nuestro personal, proveedores y clientes.</h5>
     </div>
 
 </div>
@@ -21,7 +21,7 @@
         <h2 class="center-align">Misi&oacute;n</h2>
     </div>
     <div style="text-align: justify;">
-        <h5>Ser al año 2022 una empresa que consolide una propuesta profesional e innovadora en cuanto a productos de pintura, con un planteamiento de formaci&oacute;n, emprendedor, solidario y pertinente al desarrollo regional; en atenci&aacute;n a las necesidades de la población salvadore&ntilde;a.</h5>
+        <h5>Ser al año 2022 una empresa que consolide una propuesta profesional e innovadora en cuanto a productos estampados, con un planteamiento de formaci&oacute;n, emprendedor, solidario y pertinente al desarrollo regional; en atenci&aacute;n a las necesidades de nuestros clientes.</h5>
     </div>
 
     <!--Vision-->
@@ -29,7 +29,7 @@
         <h2 class="center-align">Visi&oacute;n</h2>
     </div>
     <div style="text-align: justify;">
-        <h5>Somos una empresa dedicada a resolver las necesidades de las personas en cuanto a productos de pintura se refiere, preferentemente a la población salvadore&ntilde;a, mediante nuestros productos de alta calidad, contando con numeroso personal que labora y aporta experiencia, criterio y esfuerzo a nuestra compa&ntilde;&iacute;a y nuestros proveedores.-</h5>
+        <h5>Somos una empresa dedicada a resolver las necesidades de las personas en cuanto a productos estampados refiere, preferentemente a la población salvadore&ntilde;a, mediante nuestros productos de alta calidad, contando con numeroso personal que labora y aporta experiencia, criterio y esfuerzo a nuestra compa&ntilde;&iacute;a y nuestros proveedores.-</h5>
     </div>
 </div>
 
@@ -58,7 +58,7 @@
             </ul>
         </div>
     </div>
-    <div>
+    <!--<div>
         <h2 class="center-align">Desarrolladores</h2>
     </div>
     <div class="row" style="text-align: justify;">
@@ -78,6 +78,6 @@
                 <h5><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur nostrum voluptatem dolorum? Tempora earum consequuntur at. Accusamus, atque, inventore iste, illo voluptatum cum voluptas ullam ut ad magni numquam alias?</p></h5>
             </div>
         </div>
-    </div>
+    </div>-->
 
 </div>

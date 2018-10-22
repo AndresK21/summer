@@ -37,7 +37,7 @@
                             <div class="row">
                                 <form class="col s12">
                                     <div class="row">
-                                        <button class="blue btn waves-effect waves-light" type="submit" name="action">Enviar
+                                        <button class="teal lighten-1 btn waves-effect waves-light" type="submit" name="action">Enviar
                                             <i class="material-icons right">send</i>
                                         </button>
                                     </div>

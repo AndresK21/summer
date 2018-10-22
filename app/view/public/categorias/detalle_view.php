@@ -20,7 +20,7 @@
                             <label for='cantida'>Cantidad</label>
                         </div>
                     </div>
-                    <button type='submit' name='agregar' class='btn waves-effect waves-light blue tooltipped' data-tooltip='Realizar Compra'><i class='material-icons'>add_shopping_cart</i>Añadir al Carrito</button>
+                    <button type='submit' name='agregar' class='btn waves-effect waves-light teal lighten-1 tooltipped' data-tooltip='Realizar Compra'><i class='material-icons'>add_shopping_cart</i>Añadir al Carrito</button>
                 </div>
             </div>
         </form>
@@ -63,12 +63,12 @@
             $total_paginas = ceil($total_registros / $por_pagina);  
 
             //link a primera pagina
-            print("<ul class='pagination center'><a href='detalle_producto.php?id=".$producto->getId_producto()."&pagina=1'>".''."<i class='material-icons'>first_page</i></a></li>");
+            print("<ul class='pagination center'><a href='detalle_producto.php?id=".$producto->getId_producto()."&pagina=1'>".''."<i class='material-icons teal-text text-lighten-1'>first_page</i></a></li>");
             for ($i=1; $i<=$total_paginas; $i++) {
             print("<li class='waves-effect white-text ligactive'><a href='detalle_producto.php?id=".$producto->getId_producto()."&pagina=".$i."'>".$i."</a></li>");
             };
             // link a la ultima pagina
-            print("<a href='detalle_producto.php?id=".$producto->getId_producto()."&pagina=$total_paginas'>".''."<i class='material-icons'>last_page</i></a></li>");
+            print("<a href='detalle_producto.php?id=".$producto->getId_producto()."&pagina=$total_paginas'>".''."<i class='material-icons teal-text text-lighten-1'>last_page</i></a></li>");
         ?>
     </div>
 </div>

@@ -22,14 +22,14 @@
         ?>
         </div>
         <div class="input-field col s2">
-            <button type='submit' name='buscar_producto' class='btn waves-effect blue tooltipped' data-tooltip='Buscar por nombre'><i class='material-icons'>search</i></button>
+            <button type='submit' name='buscar_producto' class='btn waves-effect teal lighten-1 tooltipped' data-tooltip='Buscar por nombre'><i class='material-icons'>search</i></button>
         </div>
     </form>
 
 
         <?php
         $categoria = $data_productos[0]['categoria'];
-        print("<h4 class='center blue-text'>$categoria</h4>");
+        print("<h4 class='center teal-text text-darken-2'>$categoria</h4>");
         print("<div class='row'>");
         if(isset($_SESSION['id_cliente_p'])){
             foreach($data_productos as $productob2){
@@ -44,7 +44,7 @@
                                 <p>Precio (US$) $productob2[precio]</p>
                                 <p>Presentacion $productob2[presentacion]</p>
                             <!-- BOTON DE COMPRA -->
-                            <a href='detalle_producto.php?id=$productob2[id_producto]' class='blue waves-effect waves-light btn modal-trigger'><i class='material-icons right'>shopping_cart</i>A&ntilde;adir </a>
+                            <a href='detalle_producto.php?id=$productob2[id_producto]' class='teal lighten-1 waves-effect waves-light btn modal-trigger'><i class='material-icons right'>shopping_cart</i>A&ntilde;adir </a>
                             <!-- ESPACIO -->
                             <div class='white-text'>.</div>
                         </div>
@@ -90,10 +90,10 @@
             $total_paginas = ceil($total_registros / $por_pagina);  
 
             //link a primera pagina
-            print("<ul class='pagination center'><a href='productos_categorias.php?id=".$productob->getId_categoria()."&pagina=1'>".''."<i class='material-icons'>first_page</i></a></li>");
+            print("<ul class='pagination center'><a href='productos_categorias.php?id=".$productob->getId_categoria()."&pagina=1'>".''."<i class='material-icons teal-text text-lighten-1'>first_page</i></a></li>");
             for ($i=1; $i<=$total_paginas; $i++) {
             print("<li class='waves-effect white-text ligactive'><a href='productos_categorias.php?id=".$productob->getId_categoria()."&pagina=".$i."'>".$i."</a></li>");
             };
             // link a la ultima pagina
-            print("<a href='productos_categorias.php?id=".$productob->getId_categoria()."&pagina=$total_paginas'>".''."<i class='material-icons'>last_page</i></a></li>");
+            print("<a href='productos_categorias.php?id=".$productob->getId_categoria()."&pagina=$total_paginas'>".''."<i class='material-icons teal-text text-lighten-1'>last_page</i></a></li>");
         ?>

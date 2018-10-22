@@ -6,7 +6,7 @@
 <div class="container">
     <!--Parte de clasificacion de la tabla-->
     <table class="bordered highlight responsive-table espacio_sup espacio_inf">
-        <thead class="blue white-text">
+        <thead class="teal lighten-1 black-text">
         <tr>
             <th>Imagen</th>
             <th>Descripci&oacute;n</th>

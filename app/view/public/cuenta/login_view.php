@@ -38,7 +38,7 @@
                 <!-- BOTON DE INICIAR Sesi&oacute;n -->
                 <div class="row">
                     <div class="input-field col l9 offset-l4 m9 offset-m4 s12 offset-s3">
-                    <button type='submit' name='iniciar' class="blue waves-effect waves-light btn ">Iniciar Sesi&oacute;n</button>
+                    <button type='submit' name='iniciar' class="blue waves-effect waves-light btn teal lighten-1">Iniciar Sesi&oacute;n</button>
                 </div>
                 </div>
             </form>
@@ -130,7 +130,7 @@
                     </div>
                     <!-- BOTON INICIAR Sesi&oacute;n -->
                     <div class="input-field col l9 offset-l5 m9 offset-m4 s2 offset-s3">
-                        <button type='submit' name='crear' class="blue waves-effect waves-light btn ">Iniciar Sesi&oacute;n</button>
+                        <button type='submit' name='crear' class="blue waves-effect waves-light btn teal lighten-1">Registrarse</button>
                     </div>
                     <div class="white-text">.</div>
                     <div class="white-text">.</div>

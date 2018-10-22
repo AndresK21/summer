@@ -50,7 +50,6 @@
                             <th>Cantidad</th>
                             <th>Precio</th>
                             <th>Presentaci&oacute;n</th>
-                            <th>Existencias</th>
                             <th></th>
                             <th></th>
                         </tr>
